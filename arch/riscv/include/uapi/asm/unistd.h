@@ -52,3 +52,13 @@ __SYSCALL(__NR_riscv_flush_icache, sys_riscv_flush_icache)
 #define __NR_riscv_hwprobe (__NR_arch_specific_syscall + 14)
 #endif
 __SYSCALL(__NR_riscv_hwprobe, sys_riscv_hwprobe)
+
+/*
+ * my own syscall that prints the register table.
+ * __NR_arch_specific_syscall == 244 from <asm-generic/unistd.h>
+ * my syscal number is 245
+ */
+#ifndef __NR_riscv_regtbl
+#define __NR_riscv_regtbl (__NR_arch_specific_syscall + 1)
+#endif
+__SYSCALL(__NR_riscv_regtbl, sys_riscv_regtbl)
